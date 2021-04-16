@@ -11,7 +11,7 @@ function computerPlay(){ // this function chooses a random move for the computer
 
 }
 
-function playRound(playerSelection, computerSelection){ //the variables playerSelection and computerSelection are used as arguments for the function. based on the outcome, the win/lose/draw variables are changed to get the current score
+function playRound(playerSelection, computerSelection){ //the variables playerSelection and computerSelection are used as arguments for the function. based on the outcome,
     
     if (playerSelection === "rock" && computerSelection === "Rock"){
         draw = (draw + 1);
@@ -49,9 +49,5 @@ function playRound(playerSelection, computerSelection){ //the variables playerSe
 const computerSelection = computerPlay();  // the function computerPlay is called and its return value is placed into the variable computerSelection
 const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase(); // the player is prompted to type either r/p/s and their input is made lowercase and put into the variable playerselection
 playRound(playerSelection, computerSelection);
-
-function game(){
-    
-}
 
 
