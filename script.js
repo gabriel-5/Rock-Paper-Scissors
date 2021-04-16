@@ -4,13 +4,14 @@ let win = 0
 let lose = 0
 
 
-
+let too;
 
 function computerPlay(){ // this function chooses a random move for the computer
     let possMoves = ["Rock", "Paper", "Scissors"];
     let randomPick = possMoves [Math.floor(Math.random() * possMoves.length)];
     console.log(randomPick);
     return(randomPick);
+
 
 }
 
