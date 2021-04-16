@@ -3,6 +3,9 @@ let draw = 0
 let win = 0
 let lose = 0
 
+
+
+
 function computerPlay(){ // this function chooses a random move for the computer
     let possMoves = ["Rock", "Paper", "Scissors"];
     let randomPick = possMoves [Math.floor(Math.random() * possMoves.length)];
@@ -11,8 +14,13 @@ function computerPlay(){ // this function chooses a random move for the computer
 
 }
 
+let computerSelection = computerPlay();  // the function computerPlay is called and its return value is placed into the variable computerSelection
+let playerSelection 
+
 function playRound(playerSelection, computerSelection){ //the variables playerSelection and computerSelection are used as arguments for the function. based on the outcome,
-    
+
+    playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+
     if (playerSelection === "rock" && computerSelection === "Rock"){
         draw = (draw + 1);
         alert ("It's a draw! You currently have " + win + " win " + draw + " draw, and " + lose + " loss") ;   
@@ -44,10 +52,21 @@ function playRound(playerSelection, computerSelection){ //the variables playerSe
         alert ("You lose! Scissors cut paper. You currently have " + win + " win " + draw + " draw, and " + lose + " loss");
         
     }
+
+
 }
 
-const computerSelection = computerPlay();  // the function computerPlay is called and its return value is placed into the variable computerSelection
-const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase(); // the player is prompted to type either r/p/s and their input is made lowercase and put into the variable playerselection
-playRound(playerSelection, computerSelection);
+
+function game(){
+   
+    playRound(playerSelection, computerSelection);
+    computerPlay();
+    playRound(playerSelection, computerSelection);
+
+  
+
+}
+
+game();
 
 
