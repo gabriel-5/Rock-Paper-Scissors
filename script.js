@@ -9,17 +9,6 @@ function computerPlay(){ // this function chooses a random move for the computer
 
 }
 
-/*function playRound(playerSelection, computerSelection){ //currently this function takes the return value of the computerPlay function as uses it as an argument to find out what the computer played
-    if (computerSelection === "Scissors"){
-        alert ("it's a scissors");
-    } else if (computerSelection === "Paper"){
-        alert ("it's a paper");
-    } else {
-        alert ("it's a rock");
-    }
-
-}*/
-
 function playRound(playerSelection, computerSelection){ 
     if (playerSelection === "rock" && computerSelection === "Rock"){
         alert ("It's a draw!);
