@@ -5,7 +5,7 @@ let computerScore = 0;
 function computerPlay(){ // Chooses a random move for the computer.
     let possMoves = ["Rock", "Paper", "Scissors"]; // Array containing the three possible moves
     let randomPick = possMoves [Math.floor(Math.random() * possMoves.length)]; // Radomly selects one of the three moves
-    console.log(randomPick); //Logs the choice to console to check if it's working
+    //console.log(randomPick); //Logs the choice to console to check if it's working
     return(randomPick); // Returns the random choice to be stored in a variable when the function is called
 
 }
