@@ -21,6 +21,7 @@ let playerSelection
 function playRound(playerSelection, computerSelection){ //the variables playerSelection and computerSelection are used as arguments for the function. based on the outcome,
 
     playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+    computerPlay();
 
     if (playerSelection === "rock" && computerSelection === "Rock"){
         draw = (draw + 1);
@@ -61,7 +62,6 @@ function playRound(playerSelection, computerSelection){ //the variables playerSe
 function game(){
    
     playRound(playerSelection, computerSelection);
-    computerPlay();
     playRound(playerSelection, computerSelection);
 
   
