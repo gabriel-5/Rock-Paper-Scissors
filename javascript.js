@@ -1,7 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-
 function computerPlay(){ // Chooses a random move for the computer.
     let possMoves = ["Rock", "Paper", "Scissors"]; // Array containing the three possible moves
     let randomPick = possMoves [Math.floor(Math.random() * possMoves.length)]; // Radomly selects one of the three moves
@@ -9,14 +8,12 @@ function computerPlay(){ // Chooses a random move for the computer.
     return(randomPick); // Returns the random choice to be stored in a variable when the function is called
 
 }
-
-function playerChoice(){ // Prompts the player to make a choice
+function userPlay(){ // Prompts the player to make a choice
    return prompt("Rock, Paper or Scissors?").toLowerCase();
 }
 
-let computerSelection = computerPlay();
-let playerSelection = playerChoice();
-
+let computerSelection  = computerPlay;
+let playerSelection = userPlay;
 
 function playRound(playerSelection, computerSelection){ // Takes the variables containing the player and computer moves and figures out a winner.
 
@@ -64,20 +61,13 @@ function whoWins(){
 }
 
 function game(){
-    console.log(playRound(playerSelection, computerSelection));
-    computerSelection = computerPlay();
-    playerSelection = playerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    computerSelection = computerPlay();
-    playerSelection = playerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    computerSelection = computerPlay();
-    playerSelection = playerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    computerSelection = computerPlay();
-    playerSelection = playerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    //for(i = 0; i < 5; i++){
+        computerSelection = computerPlay();
+        playerSelection = userPlay()
+        console.log(playRound(playerSelection, computerSelection));
+    
     whoWins();
+  
    
 }
 
