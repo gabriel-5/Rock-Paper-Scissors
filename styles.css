@@ -1,0 +1,68 @@
+body {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 25px;
+    background-color: rgb(0, 153, 255);
+}
+
+#buttons {
+    text-align: center;
+    border: 20px inset greenyellow;
+    margin: 3px;
+    background-image: url(clearskies.jpg);
+    background-size:100% 100%;
+}
+
+#rock {
+    background-image: url(rock.jpg);
+    background-size: 300px 300px;
+    width: 300px;
+    height: 300px;
+    border: 7px groove rgb(207, 143, 143);
+
+
+
+}
+
+#paper {
+    background-image: url(paper.png);
+    background-size: 300px 300px;
+    width: 300px;
+    height: 300px;
+    border: 7px groove rgb(207, 143, 143);
+
+
+}
+
+#scissors {
+    background-image: url(scissors.jpg);
+    background-size: 300px 300px;
+    width: 300px;
+    height: 300px;
+    border: 7px groove rgb(207, 143, 143);
+
+
+}
+
+#textContainer{
+    background-image: url(eternalring.png);
+    display: block;
+    border: 20px groove rgb(182, 131, 131);
+    margin: 3px;
+    padding: 15px;
+    background-size: 100% 100%;
+    color: red;
+
+    
+}
+#text{
+    background-color: white;
+    border: 20px groove rgb(182, 131, 131);
+    margin: 3px;
+    padding: 15px;
+    background-size: 100% 100%;
+    
+
+    
+
+    
+}
