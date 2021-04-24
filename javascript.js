@@ -3,6 +3,11 @@ let computerScore = 0;
 let playerSelection;
 let textBox = document.querySelector("#text");
 let scoreCount = document.querySelector("#score");
+let roundCount = 0;
+let rockGone = document.getElementById("rock");
+let paperGone = document.getElementById("paper");
+let scissorsGone = document.getElementById("scissors");
+
 
 
 
@@ -14,7 +19,29 @@ function computerPlay(){
     return(randomPick); 
 }
 
-
+function checkRound(){
+    if (roundCount === 5 && playerScore > computerScore){
+        textBox.textContent = "Game End";
+        scoreCount.textContent = "You win";
+        rockGone.remove();
+        paperGone.remove();
+        scissorsGone.remove();
+    } else if (roundCount === 5 && playerScore < computerScore){
+        textBox.textContent = "Game End";
+        scoreCount.textContent = "You lose";
+        rockGone.remove();
+        paperGone.remove();
+        scissorsGone.remove();
+    } else if (roundCount === 5 && playerScore === computerScore){
+        textBox.textContent = "Game End";
+        scoreCount.textContent = "It's a draw";
+        rockGone.remove();
+        paperGone.remove();
+        scissorsGone.remove();
+    }
+}
+    
+    
 
 
 function playRound(playerSelection){ 
@@ -22,65 +49,62 @@ function playRound(playerSelection){
     computerSelection = computerPlay();
 
     if (playerSelection === "rock" && computerSelection === "Rock"){
-        textBox.textContent = "It's a draw: DOUBLE ROCK";
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. It's a draw: DOUBLE ROCK";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "It's a draw!";   
+        checkRound();
     } else if (playerSelection === "rock" && computerSelection === "Paper") {
-        computerScore = (computerScore + 1);
-        textBox.textContent = "You lose! PAPER COVERS ROCK";
+        computerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You lose! PAPER COVERS ROCK";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You lose! Paper covers rock.";    
+        checkRound();
     } else if (playerSelection === "rock" && computerSelection === "Scissors"){
-        playerScore = (playerScore + 1);
-        textBox.textContent = "You win! ROCK BREAKS SCISSORS";
+        playerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You win! ROCK BREAKS SCISSORS";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You win! Rock breaks scissors.";
+        checkRound();
     }
       else if (playerSelection === "scissors" && computerSelection === "Rock"){
-        computerScore = (computerScore + 1);
-        textBox.textContent = "You lose! ROCK BREAKS SCISSORS";
+        computerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You lose! ROCK BREAKS SCISSORS";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You lose! Rock breaks scissors.";
+        checkRound();
     } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-        playerScore = (playerScore + 1);
-        textBox.textContent = "You win! SCISSORS CUT PAPER";
+        playerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You win! SCISSORS CUT PAPER";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You win! Scissors cut paper.";       
+        checkRound();
     } else if (playerSelection === "scissors" && computerSelection === "Scissors"){
-        textBox.textContent = "It's a draw: DOUBLE SCISSORS";
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. It's a draw: DOUBLE SCISSORS";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "It's a draw!";
+        checkRound();
     }
     else if (playerSelection === "paper" && computerSelection === "Rock"){
-        playerScore = (playerScore + 1);
-        textBox.textContent = "You win! PAPER COVERS ROCK";
+        playerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You win! PAPER COVERS ROCK";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You win! Paper covers rock."; 
+        checkRound();
     } else if (playerSelection === "paper" && computerSelection === "Paper") {
-        textBox.textContent = "It's a draw: DOUBLE PAPER";
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. It's a draw: DOUBLE PAPER";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "It's a draw!";
+        checkRound();
     } else if (playerSelection === "paper" && computerSelection === "Scissors"){
-        computerScore = (computerScore + 1);
-        textBox.textContent = "You lose! SCISSORS CUT PAPER";
+        computerScore++;
+        roundCount++;
+        textBox.textContent = "Round " + roundCount + " over. You lose! SCISSORS CUT PAPER";
         scoreCount.textContent = "Your score: " + playerScore + " Opponent Score:" + computerScore;
-        return "You lose! Scissors cut paper.";
+        checkRound();
         
     }
 
 }
-
-function result(){
-    if (playerScore > computerScore){
-        console.log("You win! You got " + playerScore + " points and the computer got " + computerScore + " points.");
-    } else if (playerScore < computerScore){
-        console.log("You lose :( You got " + playerScore + " points and the computer got " + computerScore + " points.");
-    } else {
-        console.log("It's a draw... You got " + playerScore + " points and the computer got " + computerScore + " points.")
-    }
-
-}
-
 
 const rockButton = document.querySelector("#rock")
 const paperButton = document.querySelector("#paper")
