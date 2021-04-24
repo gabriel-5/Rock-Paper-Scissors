@@ -7,6 +7,14 @@ let roundCount = 0;
 let rockGone = document.getElementById("rock");
 let paperGone = document.getElementById("paper");
 let scissorsGone = document.getElementById("scissors");
+let music = document.getElementById("song"); 
+
+
+function playAudio() {
+    music.play();
+  }
+
+  
 
 
 
@@ -16,6 +24,7 @@ function computerPlay(){
     let possMoves = ["Rock", "Paper", "Scissors"]; 
     let randomPick = possMoves [Math.floor(Math.random() * possMoves.length)]; 
     console.log(randomPick);
+    playAudio();
     return(randomPick); 
 }
 
